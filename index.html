@@ -38,6 +38,29 @@
 
   ul {
     padding-left: 0px; 
+    list-style: none;
+  }
+
+  li {
+    display:block;
+    width: 120px;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  li:before {
+    content: '●';
+    line-height: 18px;
+    width: 16px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  li.heart:before {
+    content: '♡';
+    color: #ca1234;
+    font-weight: 900;
+    font-size: 21px;
   }
 
   .list {
@@ -53,8 +76,12 @@
   .hidden {
     position: absolute;
     top: 3px;
-    right: 50px;
+    left: -62px;
     color: #fbfbfb;
+  }
+
+  .heart {
+
   }
 
   ::selection {
@@ -73,15 +100,18 @@
 
   <div class="list">
     <div class="header-wrapper">
-      <span class="hidden">gaylord</span>
+        <span class="hidden">gaylord</span>
       <h3>list</h3>
     </div>
     <ul>
-      <li>
+      <li class="heart">
         ryan
       </li>
       <li>
         horse
+      </li>
+      <li>
+        iggy
       </li>
     </ul>
   </div>
