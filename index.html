@@ -4,144 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>tuom.io</title>
+  <title>tuom.io | login</title>
   <style>
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900&display=swap');
+    * {
+      box-sizing: border-box;
+    }
 
-  * {
-    font-family: 'Source Sans Pro', sans-serif;
-    box-sizing: border-box;
-  }
+    html {
+      height: 100%;
+    }
 
-  html, body {
-    padding: 0px;
-    margin: 0px;
-  }
+    body {
+      height: 500px;
+      background-image: linear-gradient(#066b97, #030c11);
+    }
 
-  body {
-    font-size: 18px;
-    padding: 6px 12px;
-    color: #222;
-    background-color: #fbfbfb;
-  }
+    h1 {
+      color: white;
+      margin-bottom: 0px;
+      font-size: 45px;
+    }
 
-  .title {
-    vertical-align: top;
-    margin-bottom: 18px;
-    display: inline-block;
-  }
+    .main {
+      max-width: 350px;
+      margin: 0 auto;
+      margin-top: 120px;
+    }
 
-  h3 {
-    margin-bottom: 8px;
-    margin-top: 0px;
-  }
+    .login-container {
+      padding-top: 12px;
+      background-color:#0000003d;
+      padding-bottom: 12px;
+      max-width: 150px;
+    }
 
-  ul {
-    padding-left: 0px; 
-    list-style: none;
-  }
+    .input-block {
+      margin-bottom: 8px;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
 
-  li {
-    display:block;
-    width: 120px;
-    position: relative;
-    vertical-align: middle;
-  }
+    input[type='text'],
+    input[type='password'] {
+      width: 100%;
+    }
 
-  li:before {
-    content: '●';
-    line-height: 18px;
-    width: 16px;
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 1.5px;
-  }
-
-  li.heart:before {
-    content: '♡';
-    color: #ca1234;
-    font-weight: 900;
-    font-size: 21px;
-    padding-left: 0px;
-    padding-right: 1.5px;
-  }
-    
-  li.pensive:before {
-    content: '😔';
-    font-size: 10px;
-    padding-left: 0px;
-    margin-right: 1.5px;
-  }
-
-  .list {
-    display: inline-block;
-    padding: 0px 100px;
-    vertical-align: top;
-  }
-
-  .header-wrapper {
-    position: relative;
-  }
-
-  .hidden {
-    position: absolute;
-    top: 3px;
-    left: -62px;
-    color: #fbfbfb;
-  }
-
-  .heart {
-
-  }
-
-  ::selection {
-    color: #111;
-    background: #ffb7b7; /* WebKit/Blink Browsers */
-  }
-
-  ::-moz-selection {
-    color: #111;
-    background: #ffb7b7; /* Gecko Browsers */
-  }
+    #error {
+      color: salmon;
+      display: none;
+      padding: 8px;
+    }
   </style>
 </head>
 <body>
-  <span class="title">tuomio homepage fuck you FF</span>
-
-  <div class="list">
-    <div class="header-wrapper">
-        <span class="hidden">gaylord</span>
-      <h3>list</h3>
+  <div class="main">
+    <div class="title-container">
+      <h1>tuom.io - login</h1>
     </div>
-    <ul>
-      <li class="heart">
-        ryan
-      </li>
-      <li>
-        horse
-      </li>
-      <li>
-        iggy
-      </li>
-      <li>
-        techno
-      </li>
-      <li>
-        nuwu
-      </li>
-      <li class="pensive">
-        peti
-      </li>
-      <li>
-        geeky
-      </li>
-      <li>
-        nunex
-      </li>
-      <li>
-        fenny
-      </li>
-    </ul>
+    <div class="login-container">
+      <form id="login" method="GET" action="/">
+        <div class="input-block">
+          <input type="text" placeholder="username"/>
+        </div>
+
+        <div class="input-block">
+          <input type="password" placeholder="password" />
+        </div>
+
+        <div class="input-block">
+          <input type="submit" onclick="login()" value="login" />
+        </div>
+      </form>
+    </div>
+    <span id="error">wrong username or password.</span>
   </div>
+  <script>
+  function login() {
+    var x = document.getElementById("error");
+    x.style.display = "block";
+  }
+ </script>
 </body>
 </html>
